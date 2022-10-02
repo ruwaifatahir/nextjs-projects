@@ -1,7 +1,10 @@
+//EXTERNAL IMPORTS
 import { NextComponentType } from "next";
-
-import { Navbar, HamNavbar } from "./";
 import { Box, useColorModeValue, Show } from "@chakra-ui/react";
+
+//INTERNAL IMPORTS
+import { Navbar, HamNavbar } from "./";
+
 const Navigation: NextComponentType = () => {
   return (
     <Box
