@@ -20,6 +20,7 @@ import {
   BulbIcon,
   GithubIconLight,
 } from "../../assets";
+import Link from "next/link";
 
 const HamNavbar: NextComponentType = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -45,9 +46,11 @@ const HamNavbar: NextComponentType = () => {
             color={logoC}
           />
 
-          <Text color={useColorModeValue("blue.600", "blue.200")}>
-            Redux Shopping
-          </Text>
+          <Link href="/">
+            <Text color={useColorModeValue("blue.600", "blue.200")}>
+              Redux Shopping
+            </Text>
+          </Link>
         </HStack>
         <IconButton
           aria-label="Search database"

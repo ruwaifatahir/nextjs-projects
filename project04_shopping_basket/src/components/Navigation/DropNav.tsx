@@ -1,6 +1,7 @@
 //EXTERNAL IMPORTS
 import { NextComponentType } from "next";
 import { Text, useColorModeValue, VStack } from "@chakra-ui/react";
+import Link from "next/link";
 
 const DropNav: NextComponentType = () => {
   return (
@@ -22,8 +23,8 @@ const DropNav: NextComponentType = () => {
         ),
       }}
     >
-      <Text>Products</Text>
-      <Text>Cart</Text>
+      <Link href = "/">Products</Link>
+      <Link href="/cart">Cart</Link>
     </VStack>
   );
 };
