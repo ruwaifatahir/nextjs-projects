@@ -2,4 +2,4 @@
 
 Shopping cart using Next.js and Redux Toolkit. Styled with Chakra UI.
 
-*Application is deployed on* [vercel]()
+*Application is deployed on* [here](https://nextjs-projects-gamma.vercel.app/)
