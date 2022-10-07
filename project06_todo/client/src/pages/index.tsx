@@ -19,6 +19,8 @@ const Home: NextPage = () => {
     init();
   }, []);
 
+  console.log(todos);
+
   const addTodo = async (todoText: string) => {
     const sData = {
       data: {
