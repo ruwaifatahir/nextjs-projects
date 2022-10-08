@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 
-import { VStack, HStack, Flex, Box } from "@chakra-ui/react";
+import { VStack, Flex } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-import { setSelectedId } from "../redux/features/transactionSlice";
 import {
   Header,
   Balance,

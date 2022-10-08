@@ -18,13 +18,28 @@ import {
 
 const AddTransaction = () => {
   const [name, setName] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
 
-  const count = useSelector((state: any) => state.transaction.count);
-  const value = useSelector((state: any) => state.transaction.value);
-  const selectedId = useSelector((state: any) => state.transaction.selectedId);
+  const { count, selectedId } = useSelector((state: any) => state.transaction);
+  // const selectedId = useSelector((state: any) => state.transaction.selectedId);
   console.log(selectedId);
   const dispatch = useDispatch();
+
+  const handleAddTransaction = () => {
+    const tempAmount = amount.split("");
+
+    if (tempAmount[0] == "+" || tempAmount[0] == "-") {
+      let status = tempAmount[0] == "+" ? true : false;
+      dispatch(
+        addTransaction({
+          id: count,
+          name,
+          amount: Number(amount.slice(1, amount.length)),
+          type: status,
+        })
+      );
+    }
+  };
 
   return (
     <VStack w="full" align="start" fontWeight="500" spacing={3}>
@@ -42,12 +57,12 @@ const AddTransaction = () => {
       />
       <Text fontSize={14}>Amount</Text>
       <Input
-        type="number"
+        type="text"
         placeholder="Enter amount..."
         bg="white"
         rounded="none"
         value={amount}
-        onChange={(e) => setAmount(Number(e.target.value))}
+        onChange={(e) => setAmount(e.target.value)}
       />
 
       <HStack justify="center" w="full">
@@ -61,16 +76,9 @@ const AddTransaction = () => {
           _hover={{
             bg: "purple.500",
           }}
-          onClick={() =>
-            dispatch(
-              addTransaction({
-                id: count,
-                name,
-                amount,
-                type: true,
-              })
-            )
-          }
+          onClick={() => {
+            handleAddTransaction();
+          }}
         >
           Add Transaction
         </Button>

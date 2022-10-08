@@ -28,7 +28,7 @@ const History = () => {
             id={index}
           >
             <Text>{name}</Text>
-            <Text color={type ? "green.300" : "red.300"}>+{amount}</Text>{" "}
+            <Text color={type ? "green.300" : "red.300"}>{amount}</Text>{" "}
           </HistoryItem>
         )
       )}

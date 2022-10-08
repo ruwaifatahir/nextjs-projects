@@ -1,5 +1,5 @@
-import { HStack, Text, Button } from "@chakra-ui/react";
-import { useSelector, useDispatch } from "react-redux";
+import { HStack } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
 import { setSelectedId } from "../redux/features/transactionSlice";
 
 const HistoryItem = ({ children, color, id }: any) => {
