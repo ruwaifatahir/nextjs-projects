@@ -1,4 +1,4 @@
-import { Box, HStack, VStack } from "@chakra-ui/react";
+import { Box, HStack, Stack, VStack } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 
@@ -19,9 +19,9 @@ const Home: NextPage = () => {
 
   return (
     <HStack w="full" justify="center">
-      <VStack mt={10} spacing={10}>
+      <VStack mt={10} spacing={10} w={{ base:"full", lg: "50%" }}>
         <Header />
-        <HStack spacing={7}>
+        <Stack spacing={7} direction={{ base: "column", lg: "row" }}>
           <Card title="Confirmed" data={confirmed} lastUpdate={lastUpdate} />
           <Card
             title="Recovered"
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
             lastUpdate={lastUpdate}
           />
           <Card title="Deaths" data={deaths} lastUpdate={lastUpdate} />
-        </HStack>
+        </Stack>
         {/* <SelectBar /> */}
 
         <GlobalChart />

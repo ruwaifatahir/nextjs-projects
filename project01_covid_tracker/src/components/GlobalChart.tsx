@@ -12,6 +12,7 @@ import {
 import { Line } from "react-chartjs-2";
 
 import { fetchDailyData } from "../helper";
+import { Box, Container, HStack, Text } from "@chakra-ui/react";
 
 const GlobalChart: any = () => {
   const [dailyData, setDailyData]: any = useState([]);
@@ -42,7 +43,7 @@ const GlobalChart: any = () => {
       },
       title: {
         display: true,
-        text: "",
+        text: "Global Data",
       },
     },
   };
@@ -72,7 +73,11 @@ const GlobalChart: any = () => {
       },
     ],
   };
-  return <Line options={options} data={data} />;
+  return (
+    <Container maxW={{ base: "90%", lg: "100%" }}>
+      <Line options={options} data={data} />
+    </Container>
+  );
 };
 
 export default GlobalChart;
