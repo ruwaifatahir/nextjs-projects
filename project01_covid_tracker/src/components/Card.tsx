@@ -2,7 +2,6 @@ import { Text, VStack } from "@chakra-ui/react";
 import CountUp from "react-countup";
 
 const Card: any = ({ title, data, lastUpdate }: any) => {
-  console.log(data);
   return (
     <VStack
       align="start"

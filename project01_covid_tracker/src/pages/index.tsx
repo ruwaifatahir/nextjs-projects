@@ -2,7 +2,7 @@ import { Box, HStack, VStack } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 
-import { Header, Card, SelectBar } from "../components";
+import { Header, Card, SelectBar, GlobalChart } from "../components";
 
 import { fetchGlobalData } from "../helper";
 const Home: NextPage = () => {
@@ -11,11 +11,9 @@ const Home: NextPage = () => {
     const init = async () => {
       const res = await fetchGlobalData();
       setGlobalData(res);
-      console.log(res);
     };
     init();
   }, []);
-  console.log(globalData, "globalData");
 
   const { confirmed, deaths, lastUpdate } = globalData || {};
 
@@ -32,7 +30,9 @@ const Home: NextPage = () => {
           />
           <Card title="Deaths" data={deaths} lastUpdate={lastUpdate} />
         </HStack>
-        <SelectBar />
+        {/* <SelectBar /> */}
+
+        <GlobalChart />
       </VStack>
     </HStack>
   );
