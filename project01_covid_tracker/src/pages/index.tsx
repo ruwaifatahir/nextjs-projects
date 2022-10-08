@@ -17,26 +17,20 @@ const Home: NextPage = () => {
   }, []);
   console.log(globalData, "globalData");
 
+  const { confirmed, deaths, lastUpdate } = globalData || {};
+
   return (
     <HStack w="full" justify="center">
       <VStack mt={10} spacing={10}>
         <Header />
         <HStack spacing={7}>
-          <Card
-            title="Confirmed"
-            data={globalData?.confirmed}
-            lastUpdate={globalData?.lastUpdate}
-          />
+          <Card title="Confirmed" data={confirmed} lastUpdate={lastUpdate} />
           <Card
             title="Recovered"
             data={{ value: 600000 }}
-            lastUpdate={globalData?.lastUpdate}
+            lastUpdate={lastUpdate}
           />
-          <Card
-            title="Deaths"
-            data={globalData?.deaths}
-            lastUpdate={globalData?.lastUpdate}
-          />
+          <Card title="Deaths" data={deaths} lastUpdate={lastUpdate} />
         </HStack>
         <SelectBar />
       </VStack>
