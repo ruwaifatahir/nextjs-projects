@@ -16,8 +16,14 @@ const BlogPage = ({ blog }: any) => {
   return (
     <VStack w="full" justify="center">
       <Divider />
-      <VStack maxW="80%" w="full" pt={10} fontSize="3xl" spacing={8}>
-        <Heading size="3xl">{title}</Heading>
+      <VStack
+        maxW="80%"
+        w="full"
+        pt={10}
+        fontSize={{ base: "xl", lg: "3xl" }}
+        spacing={8}
+      >
+        <Heading size={{base: "xl",lg:"3xl"}}>{title}</Heading>
         <Text>{description}</Text>
         <Text as={ReactMarkdown}>{content}</Text>
         <Image src={`http://localhost:1337${url}`} />
