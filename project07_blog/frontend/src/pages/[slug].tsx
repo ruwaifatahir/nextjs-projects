@@ -2,7 +2,6 @@ import { Divider, Heading, Image, Text, VStack } from "@chakra-ui/react";
 import ReactMarkdown from "react-markdown";
 import { fetchApi } from "../api";
 const BlogPage = ({ blog }: any) => {
-  console.log(blog);
   const {
     title,
     description,
@@ -28,7 +27,7 @@ const BlogPage = ({ blog }: any) => {
 };
 
 export async function getServerSideProps({ params }: any) {
-  const blogs = await fetchApi();
+  const blogs = await fetchApi("articles");
   let blog = blogs.filter(
     ({ attributes: { slug } }: any) => slug == params.slug
   );

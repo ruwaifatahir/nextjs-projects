@@ -1,7 +1,6 @@
 import { Divider, HStack, VStack } from "@chakra-ui/react";
 import { Blog } from "./";
 const BlogList = ({ blogList }: any) => {
-  console.log(blogList);
   return (
     <HStack w="full" justify="center" pt={10}>
       <VStack spacing={10} w="full">

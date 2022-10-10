@@ -1,11 +1,14 @@
 import { Divider, Heading, HStack, VStack } from "@chakra-ui/react";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <HStack justify="center">
-      <Heading as="h1" size="xl" py={8}>
-        RUWAIFA BLOG
-      </Heading>
+      <Link href="/">
+        <Heading as="h1" size="xl" py={8}>
+          RUWAIFA BLOG
+        </Heading>
+      </Link>
     </HStack>
   );
 };

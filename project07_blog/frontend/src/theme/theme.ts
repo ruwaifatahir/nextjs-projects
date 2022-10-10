@@ -2,7 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 const navLink = {
   variant: "ghost",
-  fontSize: "2xl",
+  fontSize: "lg",
   fontWeight: "600",
   _focus: { fontWeight: 700, bg: "white" },
   _hover: { bg: "white", color: "blackAlpha.600" },
