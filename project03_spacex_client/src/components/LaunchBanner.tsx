@@ -2,7 +2,7 @@ import { HStack, VStack, Heading, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
 
 const LaunchBanner: any = ({ data }: any) => {
-  let { id, success, date, name } = data;
+  let { id, index, success, date, name } = data;
   const color = success ? "green.400" : "red.400";
   return (
     <HStack
@@ -15,7 +15,7 @@ const LaunchBanner: any = ({ data }: any) => {
     >
       <VStack align="start" spacing={5}>
         <HStack>
-          <Heading size="lg">1. Mission:</Heading>
+          <Heading size="lg">{index + 1}. Mission:</Heading>
           <Heading size="lg" color={color}>
             {" "}
             {name}

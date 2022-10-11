@@ -24,7 +24,7 @@ export async function getServerSideProps() {
   const { data } = await client.query({
     query: gql`
       query {
-        launchesPast(limit: 10) {
+        launchesPast(limit: 20) {
           mission_name
           launch_date_local
           launch_success

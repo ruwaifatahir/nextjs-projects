@@ -17,11 +17,15 @@ const LaunchesList: any = ({ launchesData }: any) => {
       </VStack>
 
       {launchesData.map(
-        ({ id, launch_success, launch_date_local, mission_name }: any) => (
+        (
+          { id, launch_success, launch_date_local, mission_name }: any,
+          index: any
+        ) => (
           <LaunchBanner
             key={id}
             data={{
               id,
+              index,
               success: launch_success,
               date: launch_date_local,
               name: mission_name,

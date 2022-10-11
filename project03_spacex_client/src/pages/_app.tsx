@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
       <Header />
-      <NextNprogress height={9} color="green" />
+      <NextNprogress height={5} color="green" />
       <Component {...pageProps} />
       <Footer />
     </ChakraProvider>
